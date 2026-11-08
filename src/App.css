@@ -5,11 +5,16 @@
 
 .content {
   flex: 1;
-  padding: 3rem;
+  min-width: 0;
+  --content-pad-x: 3rem;
+  --content-pad-top: 3rem;
+  padding: var(--content-pad-top) var(--content-pad-x) 3rem;
 }
 
 @media (max-width: 768px) {
   .content {
-    padding: calc(56px + 1.5rem) 1.25rem 1.5rem;
+    --content-pad-x: 1.25rem;
+    --content-pad-top: calc(56px + 1.5rem);
+    padding-bottom: 1.5rem;
   }
 }

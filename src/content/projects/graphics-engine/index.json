@@ -1,0 +1,6 @@
+{
+  "title": "Graphics Engine from Scratch",
+  "summary": "A graphics engine built from the ground up in C++ and DirectX: rasterization, rendering, ray tracing and path tracing, with 2D and 3D projects.",
+  "featured": true,
+  "order": 1
+}

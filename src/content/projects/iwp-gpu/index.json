@@ -1,0 +1,6 @@
+{
+  "title": "IWP on GPU",
+  "summary": "High-performance implementation of the Irregular Wavefront Propagation pattern: parallel image processing algorithms in Rust, then C++/CUDA on GPU with Gunrock.",
+  "featured": true,
+  "order": 2
+}
