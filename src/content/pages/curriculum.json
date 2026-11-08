@@ -1,0 +1,154 @@
+{
+  "title": "Curriculum",
+  "profile": {
+    "name": "Luiz Felipe Couto Gontijo",
+    "headline": "Senior Software Engineer · Games Engineering MSc student",
+    "contacts": [
+      {
+        "kind": "email",
+        "label": "luizcouto@dcc.ufmg.br",
+        "url": "mailto:luizcouto@dcc.ufmg.br"
+      },
+      {
+        "kind": "linkedin",
+        "label": "linkedin.com/in/luiz-felipe-couto",
+        "url": "https://www.linkedin.com/in/luiz-felipe-couto/"
+      },
+      {
+        "kind": "github",
+        "label": "github.com/luiz-couto",
+        "url": "https://github.com/luiz-couto"
+      }
+    ]
+  },
+  "summary": "Computer Science graduate from the Federal University of Minas Gerais (UFMG), currently working as a Senior Software Engineer and doing a Master's degree in Games Engineering at the University of Warwick. I'm passionate about software development, always looking to learn new technologies, meet new people and new areas of innovation.",
+  "experience": [
+    {
+      "role": "Senior Software Engineer",
+      "company": "Yalo",
+      "location": "United States, California",
+      "period": "Jan 2024 — Present",
+      "description": "Started on the messaging backend, building high-efficiency solutions with Redis, Websockets and related technologies. Moved to the developer experience team, building tools to improve the efficiency, standardization and capabilities of other engineering teams (GitHub Actions, CI/CD, OpenAPI — mostly TypeScript and Go). Currently working on the core backend infrastructure of the platform: message exchanging protocols, Kafka, authentication and more."
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Kobe Apps",
+      "location": "Brazil, Porto Alegre",
+      "period": "Apr 2023 — Jan 2024",
+      "description": "Worked at Yalo as a contractor before being hired full-time. Maintained and developed backend APIs, networking and messaging services using Kafka, Redis, Websockets, Kubernetes and GCloud, focusing on maintainability, efficiency and scalability."
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Stack31",
+      "location": "Brazil, Belo Horizonte",
+      "period": "Jan 2021 — Apr 2023",
+      "description": "Started as a Golang developer on a service mesh manager, working heavily with Kubernetes, Docker and cloud computing. From mid-2022, worked as a full stack developer on a brand new product using Node.js, TypeScript and React."
+    },
+    {
+      "role": "Software Engineer",
+      "company": "IndWise",
+      "location": "Brazil, Belo Horizonte",
+      "period": "Jun 2019 — Jan 2021",
+      "description": "Main developer of a React Native app for easy evaluation of item samples for industries, built with React Native, Node.js and TypeScript. Also worked as a full stack developer on the main website."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Games Engineering Master's (In Progress)",
+      "institution": "University of Warwick",
+      "location": "Coventry, United Kingdom",
+      "period": "Sep 2025 — Present",
+      "description": "Understanding and implementing a graphics engine from the ground up: rasterization, rendering, ray tracing and path tracing, with 2D and 3D projects in C++ and DirectX. Game development with individual and group projects using our own engine, Unreal Engine and Godot."
+    },
+    {
+      "degree": "Computer Science Bachelor's",
+      "institution": "Universidade Federal de Minas Gerais (UFMG)",
+      "location": "Belo Horizonte, Brazil",
+      "period": "2018 — 2023",
+      "description": "Projects on low-level topics in C and C++, data science in Python and compilers with LLVM. Final grade: 83%.",
+      "thesis": "High-Performance Implementation of the Irregular Wavefront Propagation Pattern on GPU using Gunrock — parallel and efficient IWP algorithms implemented first in Rust, then in C++/CUDA on GPU using the Gunrock graph library."
+    }
+  ],
+  "skills": [
+    {
+      "category": "General",
+      "items": [
+        "Go",
+        "TypeScript",
+        "JavaScript",
+        "Rust",
+        "C",
+        "C++",
+        "Python",
+        "GitHub"
+      ],
+      "icon": "🧰"
+    },
+    {
+      "category": "Games Engineering",
+      "items": [
+        "Computer Graphics",
+        "Low Level Engines",
+        "Unreal",
+        "Godot"
+      ],
+      "icon": "🎮"
+    },
+    {
+      "category": "Microservices",
+      "items": [
+        "Docker",
+        "Kubernetes",
+        "Helm",
+        "Kafka",
+        "Redis"
+      ],
+      "icon": "⚙️"
+    },
+    {
+      "category": "Full-Stack Web",
+      "items": [
+        "Node",
+        "React",
+        "Mongo",
+        "HTML",
+        "CSS",
+        "Bootstrap"
+      ],
+      "icon": "🌐"
+    },
+    {
+      "category": "Mobile",
+      "items": [
+        "React Native",
+        "Redux",
+        "Realm DB",
+        "Flutter"
+      ],
+      "icon": "📱"
+    },
+    {
+      "category": "DevOps and DevEx",
+      "items": [
+        "GitHub Actions",
+        "CI/CD",
+        "OpenAPI"
+      ],
+      "icon": "🚀"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Portuguese",
+      "level": "Native"
+    },
+    {
+      "language": "English",
+      "level": "C1–C2"
+    },
+    {
+      "language": "Spanish",
+      "level": "A2–B1"
+    }
+  ]
+}

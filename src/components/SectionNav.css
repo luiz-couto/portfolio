@@ -1,0 +1,80 @@
+.section-nav {
+  position: fixed;
+  top: 50%;
+  right: 36px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2rem;
+  z-index: 10;
+}
+
+/* The vertical line behind the dots. */
+.section-nav::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 8.5px;
+  width: 3px;
+  border-radius: 3px;
+  background-color: #e0e0d8;
+  z-index: -1;
+}
+
+.section-nav-dot {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2.5px solid #b5b5ac;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.section-nav-dot:hover {
+  border-color: #1a1a1a;
+  transform: scale(1.2);
+}
+
+.section-nav-dot-active {
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+}
+
+/* Always-visible label to the left of each dot: faded by default,
+   dark and bold for the current section. */
+.section-nav-label {
+  position: absolute;
+  right: calc(100% + 16px);
+  top: 50%;
+  transform: translateY(-50%);
+  color: #b5b5ac;
+  font-size: 1.05rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    color 0.2s ease,
+    font-weight 0.2s ease;
+}
+
+.section-nav-dot:hover .section-nav-label {
+  color: #6b6b66;
+}
+
+.section-nav-dot-active .section-nav-label {
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+/* No room next to the content on narrow screens. */
+@media (max-width: 1280px) {
+  .section-nav {
+    display: none;
+  }
+}
