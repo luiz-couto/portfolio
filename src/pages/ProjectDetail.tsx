@@ -2,6 +2,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { Link, useParams } from 'react-router'
 import CoverMedia from '../components/CoverMedia'
+import Reveal from '../components/Reveal'
 import { getProject, getProjectContent, resolveProjectAsset } from '../lib/projects'
 import './ProjectDetail.css'
 
@@ -25,14 +26,18 @@ function ProjectDetail() {
 
   return (
     <article className="project-detail">
-      <Link className="project-back" to="/projects">
-        ← All projects
-      </Link>
+      <Reveal>
+        <Link className="project-back" to="/projects">
+          ← All projects
+        </Link>
 
-      <h1 className="project-title">{project.title}</h1>
-      <p className="project-subtitle">{project.summary}</p>
+        <h1 className="project-title">{project.title}</h1>
+        <p className="project-subtitle">{project.summary}</p>
+      </Reveal>
 
-      <CoverMedia className="project-cover" project={project} />
+      <Reveal delay={150}>
+        <CoverMedia className="project-cover" project={project} />
+      </Reveal>
 
       {content && (
         <div className="project-body">
