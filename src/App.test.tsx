@@ -16,8 +16,14 @@ describe('App', () => {
   it('renders the About page by default', () => {
     renderApp()
     expect(
-      screen.getByRole('heading', { name: 'Hello World!' }),
+      screen.getByRole('heading', { name: /I'm Luiz/ }),
     ).toBeInTheDocument()
+    expect(
+      screen.getByRole('link', { name: /Follow on GitHub/ }),
+    ).toHaveAttribute('href', 'https://github.com/luiz-couto')
+    expect(
+      screen.getByRole('link', { name: /Send me an email/ }),
+    ).toHaveAttribute('href', 'mailto:luizcouto@dcc.ufmg.br')
   })
 
   it('shows all menu items in the sidebar', () => {
@@ -98,6 +104,23 @@ describe('App', () => {
       expect(nav).toContainElement(link)
       expect(link).toHaveAttribute('href', `#${section.toLowerCase()}`)
     }
+  })
+
+  it('renders the contact page with body links and socials', () => {
+    renderApp('/contact')
+
+    expect(
+      screen.getByRole('heading', { name: /get in touch/i }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('link', { name: 'luizcouto@dcc.ufmg.br' }),
+    ).toHaveAttribute('href', 'mailto:luizcouto@dcc.ufmg.br')
+    expect(
+      screen.getByRole('link', { name: /Check my GitHub!/ }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('link', { name: /Connect on LinkedIn/ }),
+    ).toBeInTheDocument()
   })
 
   it('shows the projects carousel and the all-projects grid', () => {

@@ -12,9 +12,13 @@ function Projects() {
     <section className="projects">
       <h1>Projects</h1>
 
-      <ProjectCarousel projects={featured} />
+      <Reveal>
+        <ProjectCarousel projects={featured} />
+      </Reveal>
 
-      <h2>All projects</h2>
+      <Reveal delay={150}>
+        <h2>All projects</h2>
+      </Reveal>
       <div className="projects-grid">
         {projects.map((project, index) => (
           <Reveal key={project.slug} delay={index * 60}>

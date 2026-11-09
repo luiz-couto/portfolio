@@ -1,0 +1,32 @@
+.contact {
+  max-width: 860px;
+}
+
+.contact-headline {
+  margin: 0;
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.contact-body {
+  margin: 2.5rem 0 3.5rem;
+}
+
+.contact-body p {
+  margin: 0 0 1.25rem;
+  color: #44443f;
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+
+.contact-body a {
+  color: #2563eb;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .contact-headline {
+    font-size: 2.4rem;
+  }
+}
