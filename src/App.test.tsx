@@ -1,7 +1,8 @@
-import { render, screen } from '@testing-library/react'
+import { act, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router'
 import App from './App'
+import { AUTO_ADVANCE_MS } from './components/ProjectCarousel'
 
 function renderApp(initialPath = '/') {
   return render(
@@ -97,6 +98,74 @@ describe('App', () => {
       expect(nav).toContainElement(link)
       expect(link).toHaveAttribute('href', `#${section.toLowerCase()}`)
     }
+  })
+
+  it('shows the projects carousel and the all-projects grid', () => {
+    renderApp('/projects')
+
+    const carousel = screen.getByRole('region', { name: 'Featured projects' })
+    expect(carousel).toBeInTheDocument()
+    expect(
+      screen.getAllByRole('button', { name: /^Show / }).length,
+    ).toBeGreaterThanOrEqual(2)
+
+    expect(
+      screen.getByRole('heading', { name: 'All projects' }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('link', { name: /Graphics Engine from Scratch/ }),
+    ).toHaveAttribute('href', '/projects/graphics-engine')
+  })
+
+  it('switches the active slide when a carousel dot is clicked', async () => {
+    const user = userEvent.setup()
+    renderApp('/projects')
+
+    const dots = screen.getAllByRole('button', { name: /^Show / })
+    expect(dots[0]).toHaveAttribute('aria-current', 'true')
+
+    await user.click(dots[1])
+    expect(dots[1]).toHaveAttribute('aria-current', 'true')
+    expect(dots[0]).toHaveAttribute('aria-current', 'false')
+  })
+
+  it('auto-advances the carousel after the interval', () => {
+    vi.useFakeTimers()
+    try {
+      renderApp('/projects')
+      const dots = screen.getAllByRole('button', { name: /^Show / })
+      expect(dots[0]).toHaveAttribute('aria-current', 'true')
+
+      act(() => {
+        vi.advanceTimersByTime(AUTO_ADVANCE_MS)
+      })
+      expect(dots[1]).toHaveAttribute('aria-current', 'true')
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('renders a project detail page with markdown content', () => {
+    renderApp('/projects/graphics-engine')
+
+    expect(
+      screen.getByRole('heading', { name: 'Graphics Engine from Scratch' }),
+    ).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /All projects/ })).toHaveAttribute(
+      'href',
+      '/projects',
+    )
+    // From content.md
+    expect(
+      screen.getByRole('heading', { name: 'What I learned' }),
+    ).toBeInTheDocument()
+  })
+
+  it('shows a not-found message for an unknown project', () => {
+    renderApp('/projects/does-not-exist')
+    expect(
+      screen.getByRole('heading', { name: 'Project not found' }),
+    ).toBeInTheDocument()
   })
 
   it('selects a section dot on click even without scrolling', async () => {
