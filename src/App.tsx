@@ -1,4 +1,5 @@
-import { Route, Routes } from 'react-router'
+import { Route, Routes, useLocation } from 'react-router'
+import BackgroundBranch from './components/BackgroundBranch'
 import ScrollToTop from './components/ScrollToTop'
 import Sidebar from './components/Sidebar'
 import { LanguageProvider } from './i18n/LanguageProvider'
@@ -9,11 +10,19 @@ import ProjectDetail from './pages/ProjectDetail'
 import Projects from './pages/Projects'
 import './App.css'
 
+const BRANCH_PAGES = ['/', '/contact']
+
 function App() {
+  const { pathname } = useLocation()
+
   return (
     <LanguageProvider>
       <div className="layout">
         <ScrollToTop />
+        {BRANCH_PAGES.includes(pathname) && (
+          // Keyed by path so the growth animation replays on each visit.
+          <BackgroundBranch key={pathname} />
+        )}
         <Sidebar />
         <main className="content">
           <Routes>
