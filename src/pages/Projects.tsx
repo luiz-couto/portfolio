@@ -1,23 +1,26 @@
 import { Link } from 'react-router'
 import ProjectCarousel from '../components/ProjectCarousel'
 import Reveal from '../components/Reveal'
+import { useLanguage, useT } from '../i18n/LanguageContext'
 import { getProjects } from '../lib/projects'
 import './Projects.css'
 
 function Projects() {
-  const projects = getProjects()
+  const { lang } = useLanguage()
+  const t = useT()
+  const projects = getProjects(lang)
   const featured = projects.filter((project) => project.featured)
 
   return (
     <section className="projects">
-      <h1>Projects</h1>
+      <h1>{t.projects.title}</h1>
 
       <Reveal>
         <ProjectCarousel projects={featured} />
       </Reveal>
 
       <Reveal delay={150}>
-        <h2>All projects</h2>
+        <h2>{t.projects.allProjects}</h2>
       </Reveal>
       <div className="projects-grid">
         {projects.map((project, index) => (

@@ -1,0 +1,32 @@
+{
+  "menu": {
+    "about": "Sobre",
+    "curriculum": "Currículo",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "curriculum": {
+    "title": "Currículo",
+    "downloadPdf": "Baixar PDF",
+    "profile": "Perfil",
+    "skills": "Habilidades",
+    "experience": "Experiência",
+    "education": "Formação",
+    "languages": "Idiomas",
+    "thesis": "Tese"
+  },
+  "projects": {
+    "title": "Projetos",
+    "seeDetails": "Ver detalhes",
+    "allProjects": "Todos os projetos",
+    "back": "Todos os projetos",
+    "notFound": "Projeto não encontrado"
+  },
+  "socials": {
+    "github": "Siga no GitHub",
+    "linkedin": "Siga no LinkedIn",
+    "email": "Me mande um email",
+    "githubContact": "Veja meu GitHub!",
+    "linkedinContact": "Conecte no LinkedIn"
+  }
+}

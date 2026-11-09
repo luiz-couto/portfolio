@@ -1,0 +1,4 @@
+{
+  "title": "Engine Gráfica do Zero",
+  "summary": "Uma engine gráfica construída do zero em C++ e DirectX: rasterização, rendering, ray tracing e path tracing, com projetos 2D e 3D."
+}

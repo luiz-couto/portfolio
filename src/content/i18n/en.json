@@ -1,0 +1,32 @@
+{
+  "menu": {
+    "about": "About",
+    "curriculum": "Curriculum",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "curriculum": {
+    "title": "Curriculum",
+    "downloadPdf": "Download PDF",
+    "profile": "Profile",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "languages": "Languages",
+    "thesis": "Thesis"
+  },
+  "projects": {
+    "title": "Projects",
+    "seeDetails": "See details",
+    "allProjects": "All projects",
+    "back": "All projects",
+    "notFound": "Project not found"
+  },
+  "socials": {
+    "github": "Follow on GitHub",
+    "linkedin": "Follow on LinkedIn",
+    "email": "Send me an email",
+    "githubContact": "Check my GitHub!",
+    "linkedinContact": "Connect on LinkedIn"
+  }
+}

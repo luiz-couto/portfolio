@@ -1,0 +1,109 @@
+{
+  "title": "Currículo",
+  "profile": {
+    "name": "Luiz Felipe Couto Gontijo",
+    "headline": "Engenheiro de Software Sênior · Mestrando em Engenharia de Jogos",
+    "contacts": [
+      {
+        "kind": "email",
+        "label": "luizcouto@dcc.ufmg.br",
+        "url": "mailto:luizcouto@dcc.ufmg.br"
+      },
+      {
+        "kind": "linkedin",
+        "label": "linkedin.com/in/luiz-felipe-couto",
+        "url": "https://www.linkedin.com/in/luiz-felipe-couto/"
+      },
+      {
+        "kind": "github",
+        "label": "github.com/luiz-couto",
+        "url": "https://github.com/luiz-couto"
+      }
+    ]
+  },
+  "summary": "Formado em Ciência da Computação pela Universidade Federal de Minas Gerais (UFMG), atualmente trabalhando como Engenheiro de Software Sênior e fazendo mestrado em Engenharia de Jogos na Universidade de Warwick. Sou apaixonado por desenvolvimento de software, sempre buscando aprender novas tecnologias, conhecer novas pessoas e novas áreas de inovação.",
+  "experience": [
+    {
+      "role": "Engenheiro de Software Sênior",
+      "company": "Yalo",
+      "location": "Estados Unidos, Califórnia",
+      "period": "Jan 2024 — Atual",
+      "description": "Comecei no backend de mensageria, construindo soluções de alta eficiência com Redis, Websockets e tecnologias relacionadas. Depois, no time de developer experience, construí ferramentas para melhorar a eficiência, padronização e capacidade dos outros times de engenharia (GitHub Actions, CI/CD, OpenAPI — principalmente TypeScript e Go). Atualmente trabalho na infraestrutura core de backend da plataforma: protocolos de troca de mensagens, Kafka, autenticação e mais."
+    },
+    {
+      "role": "Engenheiro de Software",
+      "company": "Kobe Apps",
+      "location": "Brasil, Porto Alegre",
+      "period": "Abr 2023 — Jan 2024",
+      "description": "Trabalhei na Yalo como terceirizado antes de ser contratado em tempo integral. Mantive e desenvolvi APIs de backend, serviços de rede e mensageria usando Kafka, Redis, Websockets, Kubernetes e GCloud, com foco em manutenibilidade, eficiência e escalabilidade."
+    },
+    {
+      "role": "Engenheiro de Software",
+      "company": "Stack31",
+      "location": "Brasil, Belo Horizonte",
+      "period": "Jan 2021 — Abr 2023",
+      "description": "Comecei como desenvolvedor Golang em um gerenciador de service mesh, trabalhando intensamente com Kubernetes, Docker e computação em nuvem. A partir de meados de 2022, atuei como desenvolvedor full stack em um produto novo usando Node.js, TypeScript e React."
+    },
+    {
+      "role": "Engenheiro de Software",
+      "company": "IndWise",
+      "location": "Brasil, Belo Horizonte",
+      "period": "Jun 2019 — Jan 2021",
+      "description": "Desenvolvedor principal de um app React Native para avaliação fácil de amostras de itens para indústrias, construído com React Native, Node.js e TypeScript. Também trabalhei como desenvolvedor full stack no site principal."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Mestrado em Engenharia de Jogos (Em andamento)",
+      "institution": "Universidade de Warwick",
+      "location": "Coventry, Reino Unido",
+      "period": "Set 2025 — Atual",
+      "description": "Entendendo e implementando uma engine gráfica do zero: rasterização, rendering, ray tracing e path tracing, com projetos 2D e 3D em C++ e DirectX. Desenvolvimento de jogos com projetos individuais e em grupo usando nossa própria engine, Unreal Engine e Godot."
+    },
+    {
+      "degree": "Bacharelado em Ciência da Computação",
+      "institution": "Universidade Federal de Minas Gerais (UFMG)",
+      "location": "Belo Horizonte, Brasil",
+      "period": "2018 — 2023",
+      "description": "Projetos em tópicos de baixo nível em C e C++, ciência de dados em Python e compiladores com LLVM. Nota final: 83%.",
+      "thesis": "High-Performance Implementation of the Irregular Wavefront Propagation Pattern on GPU using Gunrock — algoritmos IWP paralelos e eficientes implementados primeiro em Rust e depois em C++/CUDA na GPU usando a biblioteca de grafos Gunrock."
+    }
+  ],
+  "skills": [
+    {
+      "category": "Geral",
+      "items": ["Go", "TypeScript", "JavaScript", "Rust", "C", "C++", "Python", "GitHub"],
+      "icon": "🧰"
+    },
+    {
+      "category": "Engenharia de Jogos",
+      "items": ["Computação Gráfica", "Engines de Baixo Nível", "Unreal", "Godot"],
+      "icon": "🎮"
+    },
+    {
+      "category": "Microsserviços",
+      "items": ["Docker", "Kubernetes", "Helm", "Kafka", "Redis"],
+      "icon": "⚙️"
+    },
+    {
+      "category": "Web Full-Stack",
+      "items": ["Node", "React", "Mongo", "HTML", "CSS", "Bootstrap"],
+      "icon": "🌐"
+    },
+    {
+      "category": "Mobile",
+      "items": ["React Native", "Redux", "Realm DB", "Flutter"],
+      "icon": "📱"
+    },
+    {
+      "category": "DevOps e DevEx",
+      "items": ["GitHub Actions", "CI/CD", "OpenAPI"],
+      "icon": "🚀"
+    }
+  ],
+  "languages": [
+    { "language": "Português", "level": "Nativo" },
+    { "language": "Inglês", "level": "C1–C2" },
+    { "language": "Espanhol", "level": "A2–B1" }
+  ]
+}

@@ -7,9 +7,11 @@ import {
   LinkedInIcon,
   MailIcon,
 } from '../components/icons'
-import cv from '../content/pages/curriculum.json'
+import cvEn from '../content/pages/curriculum.json'
+import cvPt from '../content/pages/curriculum.pt-BR.json'
 import cvPdfUrl from '../content/files/curriculum-luiz-couto.pdf?url'
 import profilePicUrl from '../content/files/profile-luiz.png'
+import { pickLocalized, useLanguage, useT } from '../i18n/LanguageContext'
 import './Curriculum.css'
 
 const ACCENT_COUNT = 6
@@ -20,24 +22,28 @@ const CONTACT_ICONS: Record<string, ReactNode> = {
   github: <GitHubIcon className="contact-icon" />,
 }
 
-const SECTIONS = [
-  { id: 'profile', label: 'Profile' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'education', label: 'Education' },
-  { id: 'languages', label: 'Languages' },
-]
-
 function Curriculum() {
+  const { lang } = useLanguage()
+  const t = useT()
+  const cv = pickLocalized(lang, cvEn, cvPt)
+
+  const sections = [
+    { id: 'profile', label: t.curriculum.profile },
+    { id: 'skills', label: t.curriculum.skills },
+    { id: 'experience', label: t.curriculum.experience },
+    { id: 'education', label: t.curriculum.education },
+    { id: 'languages', label: t.curriculum.languages },
+  ]
+
   return (
     <section className="curriculum">
-      <SectionNav sections={SECTIONS} />
+      <SectionNav sections={sections} />
 
       <header className="curriculum-header">
         <h1>{cv.title}</h1>
         <a className="curriculum-download" href={cvPdfUrl} download>
           <DownloadIcon className="download-icon" />
-          Download PDF
+          {t.curriculum.downloadPdf}
         </a>
       </header>
 
@@ -75,7 +81,7 @@ function Curriculum() {
         <p className="curriculum-summary">{cv.summary}</p>
       </Reveal>
 
-      <h2 id="skills">🛠️ Skills</h2>
+      <h2 id="skills">🛠️ {t.curriculum.skills}</h2>
       <div className="curriculum-skills">
         {cv.skills.map((group, index) => (
           <Reveal key={group.category} delay={index * 80}>
@@ -98,7 +104,7 @@ function Curriculum() {
         ))}
       </div>
 
-      <h2 id="experience">💼 Experience</h2>
+      <h2 id="experience">💼 {t.curriculum.experience}</h2>
       <div className="timeline">
         {cv.experience.map((job, index) => (
           <Reveal
@@ -118,7 +124,7 @@ function Curriculum() {
         ))}
       </div>
 
-      <h2 id="education">🎓 Education</h2>
+      <h2 id="education">🎓 {t.curriculum.education}</h2>
       <div className="timeline">
         {cv.education.map((item, index) => (
           <Reveal
@@ -135,7 +141,7 @@ function Curriculum() {
               <p>{item.description}</p>
               {'thesis' in item && (
                 <p>
-                  <strong>Thesis:</strong> {item.thesis}
+                  <strong>{t.curriculum.thesis}:</strong> {item.thesis}
                 </p>
               )}
             </div>
@@ -143,7 +149,7 @@ function Curriculum() {
         ))}
       </div>
 
-      <h2 id="languages">🗣️ Languages</h2>
+      <h2 id="languages">🗣️ {t.curriculum.languages}</h2>
       <Reveal>
         <ul className="curriculum-tags curriculum-languages">
           {cv.languages.map((lang, index) => (

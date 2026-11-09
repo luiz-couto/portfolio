@@ -1,11 +1,16 @@
 import Reveal from '../components/Reveal'
 import SocialLinks from '../components/SocialLinks'
-import about from '../content/pages/about.json'
+import aboutEn from '../content/pages/about.json'
+import aboutPt from '../content/pages/about.pt-BR.json'
 import profile from '../content/profile.json'
 import profilePicUrl from '../content/files/profile-luiz.png'
+import { pickLocalized, useLanguage } from '../i18n/LanguageContext'
 import './About.css'
 
 function About() {
+  const { lang } = useLanguage()
+  const about = pickLocalized(lang, aboutEn, aboutPt)
+
   return (
     <section className="about">
       <div className="about-text">

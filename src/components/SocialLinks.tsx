@@ -1,14 +1,9 @@
 import { GitHubIcon, LinkedInIcon, MailIcon } from './icons'
 import profile from '../content/profile.json'
+import { useT } from '../i18n/LanguageContext'
 import './SocialLinks.css'
 
 type SocialKey = 'github' | 'linkedin' | 'email'
-
-const DEFAULT_LABELS: Record<SocialKey, string> = {
-  github: 'Follow on GitHub',
-  linkedin: 'Follow on LinkedIn',
-  email: 'Send me an email',
-}
 
 const SOCIALS: { key: SocialKey; url: string; icon: React.ReactNode }[] = [
   {
@@ -29,6 +24,13 @@ const SOCIALS: { key: SocialKey; url: string; icon: React.ReactNode }[] = [
 ]
 
 function SocialLinks({ labels }: { labels?: Partial<Record<SocialKey, string>> }) {
+  const t = useT()
+  const DEFAULT_LABELS: Record<SocialKey, string> = {
+    github: t.socials.github,
+    linkedin: t.socials.linkedin,
+    email: t.socials.email,
+  }
+
   return (
     <ul className="social-links">
       {SOCIALS.map((social) => (

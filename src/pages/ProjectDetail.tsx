@@ -3,6 +3,7 @@ import remarkGfm from 'remark-gfm'
 import { Link, useParams } from 'react-router'
 import CoverMedia from '../components/CoverMedia'
 import Reveal from '../components/Reveal'
+import { useLanguage, useT } from '../i18n/LanguageContext'
 import { getProject, getProjectContent, resolveProjectAsset } from '../lib/projects'
 import './ProjectDetail.css'
 
@@ -10,16 +11,18 @@ const VIDEO_EXTENSIONS = /\.(mp4|webm)$/i
 
 function ProjectDetail() {
   const { slug } = useParams()
-  const project = slug ? getProject(slug) : undefined
-  const content = slug ? getProjectContent(slug) : undefined
+  const { lang } = useLanguage()
+  const t = useT()
+  const project = slug ? getProject(slug, lang) : undefined
+  const content = slug ? getProjectContent(slug, lang) : undefined
 
   if (!project || !slug) {
     return (
       <section className="project-detail">
         <Link className="project-back" to="/projects">
-          ← All projects
+          ← {t.projects.back}
         </Link>
-        <h1>Project not found</h1>
+        <h1>{t.projects.notFound}</h1>
       </section>
     )
   }
@@ -28,7 +31,7 @@ function ProjectDetail() {
     <article className="project-detail">
       <Reveal>
         <Link className="project-back" to="/projects">
-          ← All projects
+          ← {t.projects.back}
         </Link>
 
         <h1 className="project-title">{project.title}</h1>

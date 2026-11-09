@@ -71,6 +71,39 @@
   margin-top: auto;
 }
 
+.sidebar-lang-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-lang {
+  display: inline-flex;
+  padding: 2px;
+  border-radius: 999px;
+  background-color: #ecece4;
+}
+
+.sidebar-lang-option {
+  padding: 0.35rem 0.85rem;
+  border: none;
+  border-radius: 999px;
+  background: none;
+  color: #6b6b66;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.sidebar-lang-option-active {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  box-shadow: 0 1px 4px rgba(26, 26, 26, 0.12);
+}
+
 .sidebar-social-link {
   display: flex;
   align-items: center;

@@ -1,19 +1,27 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router'
 import profile from '../content/profile.json'
+import { useLanguage, useT, type Language } from '../i18n/LanguageContext'
 import { GitHubIcon, LinkedInIcon } from './icons'
 import './Sidebar.css'
 
-const menuItems = [
-  { to: '/', label: 'About' },
-  { to: '/curriculum', label: 'Curriculum' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/contact', label: 'Contact' },
+const LANGUAGES: { code: Language; label: string }[] = [
+  { code: 'en', label: 'EN' },
+  { code: 'pt-BR', label: 'PT' },
 ]
 
 function Sidebar() {
   const [isOpen, setIsOpen] = useState(false)
   const close = () => setIsOpen(false)
+  const { lang, setLang } = useLanguage()
+  const t = useT()
+
+  const menuItems = [
+    { to: '/', label: t.menu.about },
+    { to: '/curriculum', label: t.menu.curriculum },
+    { to: '/projects', label: t.menu.projects },
+    { to: '/contact', label: t.menu.contact },
+  ]
 
   return (
     <>
@@ -45,6 +53,26 @@ function Sidebar() {
       {isOpen && <div className="sidebar-backdrop" onClick={close} />}
 
       <aside className={isOpen ? 'sidebar sidebar-open' : 'sidebar'}>
+        <div className="sidebar-lang-row">
+          <div className="sidebar-lang" role="group" aria-label="Language">
+            {LANGUAGES.map((language) => (
+              <button
+                key={language.code}
+                type="button"
+                className={
+                  lang === language.code
+                    ? 'sidebar-lang-option sidebar-lang-option-active'
+                    : 'sidebar-lang-option'
+                }
+                aria-pressed={lang === language.code}
+                onClick={() => setLang(language.code)}
+              >
+                {language.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="sidebar-profile">
           <img
             className="sidebar-avatar"

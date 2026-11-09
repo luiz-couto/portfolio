@@ -13,6 +13,27 @@ function renderApp(initialPath = '/') {
 }
 
 describe('App', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
+  it('switches the site to PT-BR and back via the sidebar toggle', async () => {
+    const user = userEvent.setup()
+    renderApp()
+
+    expect(screen.getByRole('link', { name: 'Projects' })).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: 'PT' }))
+    expect(screen.getByRole('link', { name: 'Projetos' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Currículo' })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /Sou o Luiz/ }),
+    ).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: 'EN' }))
+    expect(screen.getByRole('link', { name: 'Projects' })).toBeInTheDocument()
+  })
+
   it('renders the About page by default', () => {
     renderApp()
     expect(
